@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Title -->
+    <title>ChartJs Product</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="author" content="denis_r_home@yahoo.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <!-- Javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@^2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@^1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.0/chartjs-plugin-zoom.min.js" integrity="sha512-TT0wAMqqtjXVzpc48sI0G84rBP+oTkBZPgeRYIOVRGUdwJsyS3WPipsNh///ay2LJ+onCM23tipnz6EvEy2/UA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Add Css -->
+    <style>
+        body,
+        html {
+            background: #fbfbfd;
+            font-family: 'Noto Sans';
+        }
+        /* ::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }*/
+        
+        .bg-blue {
+            background: #1F406D;
+            color: #fff;
+        }
+        
+        button,
+        input {
+            outline: none;
+        }
+        
+        button::focus {
+            outline: none;
+        }
+        
+        .card-footer,
+        input,
+        button {
+            font-size: .9em!important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header bg-transparent">
+                <div class="d-flex justify-content-between">
+                    <h5 class="p-0 mt-2">ChartJs Product</h5>
+                    <button class="btn" id="print"><i class="fa fa-print"></i> Print</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <canvas id="dChart"></canvas>
+            </div>
+            <div class="card-footer bg-transparent">
+                <div class="row my-2">
+                    <div class="col-lg-12">
+                        <h4>Pregled vrijednosti NVI</h4>
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Od</label>
+                        <input type="date" name="dateFrom" class="form-control" />
+                    </div>
+                    <div class="col-lg-3">
+                        <label>Do</label>
+                        <input type="date" name="dateTo" class="form-control" />
+                    </div>
+                    <div class="col-lg-3">
+                        <label class="d-block text-transparent">.</label>
+                        <button class="btn btn-primary" id="demand-chart"><i class="fa fa-search"></i> Look</button>
+                        <button class="btn btn-primary" id="demand-chart-reload"><i class="fa fa-refresh"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script id="d-chart" data-chart="18" data-src="http://localhost:8000" src="http://localhost:8000/api/chart/api/script"></script>
+
+</body>
+
+</html>
